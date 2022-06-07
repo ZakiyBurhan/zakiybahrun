@@ -15,11 +15,16 @@ return new class extends Migration
     {
         Schema::create('personal_access_tokens', function (Blueprint $table) {
             $table->id();
-            $table->morphs('tokenable');
             $table->string('name');
-            $table->string('token', 64)->unique();
-            $table->text('abilities')->nullable();
-            $table->timestamp('last_used_at')->nullable();
+            $table->string('mata_pelajaran');
+            $table->string('materi');
+            $table->string('jam_pelajaran');
+            $table->string('absen');
+            $table->string('kelas');
+            $table->enum('pembelajaran', ['offline', 'online']);
+            $table->string('link');
+            $table->string('foto');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }
